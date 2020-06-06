@@ -5,6 +5,7 @@ const cors = require('cors')
 const bodyparser = require('body-parser');
 var nodemailer = require('nodemailer');
 
+const fetch = require('node-fetch');
 
 
 
@@ -50,9 +51,20 @@ transporter.sendMail(mailOptions, function(error, info){
 
 })
 
+app.get("/getnews",function(req,res){
+    fetch('http://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=0789807160f64177895a4c548e36b754')
+    .then(res => res.json())
+    .then(function(json){
+        console.log(json)
+        res.json({
+        data:json
+    })});
+    
+})
+
 
 
  //app.listen(4123, function () {
-    app.listen(process.env.PORT, function () {
+   app.listen(process.env.PORT, function () {
      console.log("listening on port 4123");
  });

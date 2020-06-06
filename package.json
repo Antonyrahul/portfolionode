@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +14,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "googleapis": "^39.2.0",
+    "node-fetch": "^2.6.0",
     "nodemailer": "^6.4.8",
     "sendmail": "^1.6.1"
   }
